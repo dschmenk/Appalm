@@ -4,9 +4,9 @@
 
 ## Authors:
 
-Hilary Cheng : hilarycheng@yahoo.com
+Hilary Cheng :
 
-David Schmenk: lematinracing@yahoo.com
+David Schmenk:
 
 Web Sites    : http://sf.net/projects/palmapple
 
