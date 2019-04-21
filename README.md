@@ -1,4 +1,4 @@
-# Appalm
+# Appalm ][
 
 [Welcome to the Apple II emulator for PalmOS](http://palmapple.sourceforge.net)
 
