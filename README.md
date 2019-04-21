@@ -1,6 +1,6 @@
 # Appalm
 
-![Welcome to the Apple II emulator for PalmOS](https://github.com/dschmenk/Appalm/blob/master/html/PalmApple - Apple IIe Emulator for Palm.html)
+![Welcome to the Apple II emulator for PalmOS](https://github.com/dschmenk/Appalm/blob/master/html/PalmApple.html)
 
 ##Authors:
 
