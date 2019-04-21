@@ -1,6 +1,6 @@
 # Appalm
 
-[Welcome to the Apple II emulator for PalmOS](http://cdn.jsdelivr.net/gh/dschmenk/Appalm/html/PalmApple.html)
+[Welcome to the Apple II emulator for PalmOS](http://palmapple.sourceforge.net)
 
 ## Authors:
 
