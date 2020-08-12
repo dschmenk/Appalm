@@ -15,9 +15,9 @@ Public Forum : http://sf.net/forum/forum.php?forum_id=88936
 ## License:
 Appalm][ Licenses is GNU GPL. Please go to this links for more
 details Appalm][ is based on YAE so that we can port to PalmOS
-Platform. Appalm][ cannot be used for sale or any redistribution
-unless there is an agreement with the authors. Please contact
-the author before any sale or any redistribution.
+Platform. Appalm][ cannot be used for sale unless there is an
+agreement with the authors. Please contact the author before
+any sale.
 
 Appalm][ is an open source software.  Anyone is free to modify
 the source code and contribute to it. All the users are free to
