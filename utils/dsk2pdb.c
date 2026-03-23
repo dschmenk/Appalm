@@ -1,11 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#ifdef __APPLE_CC__
-#include <stdlib.h>
-#else
-#include <malloc.h>
-#endif
 #define	TRUE 		1
 #define	FALSE 		0
 
@@ -16,11 +12,11 @@ typedef unsigned char  UInt8;
 typedef          char  Int8;
 typedef unsigned short UInt16;
 typedef          short Int16;
-typedef unsigned long  UInt32;
-typedef          long  Int32;
-typedef unsigned long  LocalID;
+typedef unsigned int  UInt32;
+typedef          int  Int32;
+typedef unsigned int  LocalID;
 
-#ifdef __APPLE_CC__
+#if 0
 #define BE_UINT8(b)     ((UInt8)(b))
 #define BE_UINT16(i)    ((UInt16)(i))
 #define BE_UINT32(i)    ((UInt32)(i))
@@ -477,7 +473,7 @@ void load_track_buffer(void)
 BYTE read_nibble(void)
 {
 	BYTE	data;
-	static	flag;
+	static	BYTE flag = 0;
 
 	if ( !track_buffer_valid ) {
 	  load_track_buffer();
@@ -499,6 +495,8 @@ BYTE read_nibble(void)
 /* wkt -- still somehow need to stop diskRead from
  * reading when we don't have a disk to read
  */
+int unmount_disk();
+
 int mount_disk( char *filename)
 {
 	if ( diskimage ) unmount_disk();
@@ -599,7 +597,7 @@ int main(int argc, char **argv)
             memset(&pdb_record_entries, 0, sizeof(RecordEntryType) * tracks);
             if (strlen(argv[argfilename]) >= 31)
                 argv[argfilename][31] = '\0';
-            strcpy(pdb_header.name, argv[argfilename]);
+            strcpy((char *)pdb_header.name, argv[argfilename]);
             pdb_header.modificationDate      = BE_UINT32(now);
             pdb_header.creationDate          = BE_UINT32(now);
             pdb_header.type                  = (track_size == DOS_TRACK_BYTES) ? DDSK : RDSK;
@@ -652,7 +650,7 @@ int main(int argc, char **argv)
             {
                 fread(&pdb_header, 78/*sizeof(DatabaseHdrType)*/, 1, pdb);
                 pdb_header.name[31] = '\0';
-                if (!(diskimage = fopen(pdb_header.name, "wb")))
+                if (!(diskimage = fopen((char *)pdb_header.name, "wb")))
                 {
                     fprintf(stderr, "Unable to open DSK file %s.\n", argv[2]);
                     exit(1);
